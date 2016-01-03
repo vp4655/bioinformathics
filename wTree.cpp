@@ -211,9 +211,9 @@ public:
     }
 };
 
-
-int main(){
 /*
+int main(){
+
     string s ="ACGGGACCGTTTTTAGGA";
     vector <char> alfa{'A','C','G','T'};
     wTree* w=new wTree(s,alfa);
@@ -229,7 +229,7 @@ int main(){
     for (int i=0;i<alfic.size();i++) {
         cout<<alfic[i];
     }
-    */
+
     string s ="121334533322173276";
     vector <char> alfa{'1','2','3','4','5','6','7'};
     wTree* w=new wTree(s,alfa);
@@ -241,9 +241,9 @@ int main(){
     for (int i=0;i<w->getRoot()->getVec().size();i++) {
         cout<<w->getRoot()->getVec()[i];
     }
-*/
+
     return 0;
 }
 
-
+*/
 
