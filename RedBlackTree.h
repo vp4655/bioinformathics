@@ -98,9 +98,8 @@ private:
                 node->setRightNode(NULL);
             }
 
-            if(node->getParentNode() != NULL){
-                right->setParentNode(node->getParentNode());
-            }
+
+            right->setParentNode(node->getParentNode());
 
             if(node->getParentNode() == NULL){
                 root = right;
@@ -132,9 +131,9 @@ private:
                 node->setLeftNode(NULL);
             }
 
-            if(node->getParentNode() != NULL){
-                left->setParentNode(node->getParentNode());
-            }
+
+            left->setParentNode(node->getParentNode());
+
 
             if(node->getParentNode() == NULL){
                 root = left;
@@ -237,22 +236,22 @@ private:
         if(node != NULL)
         {
             cout<<"\n\t NODE: ";
-            cout<<"\n Key: " << node->getValue();
+            cout<<"\n Key: " << node->getValue()->getId();
             cout<<"\n Colour: ";
             if(node->getColor() == black)
                 cout<<"Black";
             else
                 cout<<"Red";
             if(node->getParentNode() != NULL)
-                cout<<"\n Parent: " << node->getParentNode()->getValue();
+                cout<<"\n Parent: " << node->getParentNode()->getValue()->getId();
             else
                 cout<<"\n There is no parent of the node.  ";
             if(node->getRightNode() != NULL)
-                cout<<"\n Right Child: " << node->getRightNode()->getValue();
+                cout<<"\n Right Child: " << node->getRightNode()->getValue()->getId();
             else
                 cout<<"\n There is no right child of the node.  ";
             if(node->getLeftNode() != NULL)
-                cout<<"\n Left Child: " << node->getLeftNode()->getValue();
+                cout<<"\n Left Child: " << node->getLeftNode()->getValue()->getId();
             else
                 cout<<"\n There is no left child of the node.  ";
             cout<<endl;
@@ -277,7 +276,8 @@ public:
     void insert(long newValue){
         Node *p, *q;
         Node *t = new Node;
-        t->setValue(newValue);
+        Data *newData = new Data(newValue);
+        t->setValue(newData);
         t->setLeftNode(NULL);
         t->setRightNode(NULL);
         t->setColor(red);
@@ -291,7 +291,7 @@ public:
         else{
             while (p != NULL){
                 q = p;
-                if(t->getValue() > p->getValue() ){
+                if(t->getValue()->getId() > p->getValue()->getId() ){
                     p = p->getRightNode();
                 }
                 else{
@@ -299,7 +299,7 @@ public:
                 }
             }
             t->setParentNode(q);
-            if( t->getValue() > q->getValue() ){
+            if( t->getValue()->getId() > q->getValue()->getId() ){
                 q->setRightNode(t);
             }
             else{
@@ -321,11 +321,11 @@ public:
         int found = 0;
 
         while (searched != NULL && found == 0){
-            if(searched->getValue() == deleteValue){
+            if(searched->getValue()->getId() == deleteValue){
                 found = 1;
             }
             else{
-                if(searched->getValue() > deleteValue){
+                if(searched->getValue()->getId() > deleteValue){
                     searched = searched->getLeftNode();
                 }
                 else{
@@ -338,7 +338,7 @@ public:
                 return;
             }
             else{
-                cout << "You deleted value " << searched->getValue() << " with color " << searched->getColor() << endl;
+                cout << "You deleted value " << searched->getValue()->getId() << " with color " << searched->getColor() << endl;
 
                 if(searched->getLeftNode() == NULL || searched->getRightNode() == NULL){
                     node = searched;
@@ -397,11 +397,11 @@ public:
         int found=0;
         while(p != NULL && found == 0)
         {
-            if(p->getValue() == value)
+            if(p->getValue()->getId() == value)
                 found=1;
             if(found==0)
             {
-                if(p->getValue() < value)
+                if(p->getValue()->getId() < value)
                     p = p->getRightNode();
                 else
                     p = p->getLeftNode();
@@ -411,7 +411,7 @@ public:
             cout<<"\nElement Not Found.";
         else {
             cout << "\n\t FOUND NODE: ";
-            cout << "\n Key: " << p->getValue();
+            cout << "\n Key: " << p->getValue()->getId();
             cout << "\n Colour: ";
             if (p->getColor() == black)
                 cout << "Black";
