@@ -6,7 +6,10 @@
 #define BIOINFORMATICS_DATA_H
 #include <iostream>
 class Data{
-
+// id - id of Node
+//r - number of blocks in left subtree
+//p - number of simbols in left subtree
+//NoX - number of number of occurrences of symbol X in this subtree
 private:
     long id;
     long r;
@@ -16,6 +19,7 @@ private:
     long NoG;
     long NoT;
 
+//getters and setters for all variables
 public:
     long getId(){
         return this->id;
