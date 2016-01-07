@@ -42,6 +42,9 @@ public:
     Node *getLeftNode(){
         return this->leftNode;
     }
+    bool isLeaf(){
+        return false;
+    }
     void setLeftNode(Node *node){
         this->leftNode = node;
     }
