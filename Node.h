@@ -6,6 +6,7 @@
 #define BIOINFORMATICS_NODE_H
 
 #include "color.h"
+#include "Data.h"
 #include <iostream>
 
 using namespace my_color;
@@ -13,17 +14,17 @@ using namespace my_color;
 class Node {
 
 private:
-    long value;
+    Data *value;
     Color color;
     Node *rightNode;
     Node *leftNode;
     Node *parentNode;
 
 public:
-    long getValue(){
+    Data* getValue(){
         return this->value;
     }
-    void setValue(long value){
+    void setValue(Data* value){
         this->value = value;
     }
     Color getColor(){
@@ -40,6 +41,9 @@ public:
     }
     Node *getLeftNode(){
         return this->leftNode;
+    }
+    bool isLeaf(){
+        return false;
     }
     void setLeftNode(Node *node){
         this->leftNode = node;

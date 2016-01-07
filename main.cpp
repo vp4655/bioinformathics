@@ -8,10 +8,9 @@ using namespace my_color;
 int main(){
 
     long N;
+    Data *data;
     RedBlackTree tree = RedBlackTree();
 
-    string str;
-    getline(cin, str);
     do{
         cin >> N;
         if(N > -1){
