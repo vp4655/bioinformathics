@@ -14,7 +14,7 @@ int main(){
     do{
         cin >> N;
         if(N > -1){
-            tree.insert(N);
+            tree.insert(N,nullptr, nullptr);
         }
     }while (N > -1);
 

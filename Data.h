@@ -5,6 +5,7 @@
 #ifndef BIOINFORMATICS_DATA_H
 #define BIOINFORMATICS_DATA_H
 #include <iostream>
+using namespace std;
 class Data{
 // id - id of Node
 //r - number of blocks in left subtree
@@ -12,7 +13,6 @@ class Data{
 //NoX - number of number of occurrences of symbol X in this subtree
 private:
     long id;
-    long r;
     long p;
     long NoA;
     long NoC;
@@ -21,17 +21,16 @@ private:
 
 //getters and setters for all variables
 public:
+    Data(long id1, long p1, long NoA1, long NoC1, long NoG1, long NoT1) : id(id1), p(p1), NoA(NoA1), NoC(NoC1), NoG(NoG1),
+                                                                    NoT(NoT1) {}
+
+
+public:
     long getId(){
         return this->id;
     }
     void setId(long ID){
         this->id =ID;
-    }
-    long getR(){
-        return this->r;
-    }
-    void setR(long R){
-        this->r =R;
     }
     long getP(){
         return this->p;
@@ -63,15 +62,7 @@ public:
     void setNoT(long NOT){
         this->NoT =NOT;
     }
-    Data(long ID) {
-        this->id = ID;
-        this->NoC = 0;
-        this->NoA = 0;
-        this->NoG = 0;
-        this->NoT = 0;
-        this->r = 0;
-        this->p = 0;
-    }
+
 };
 
 #endif //BIOINFORMATICS_DATA_H

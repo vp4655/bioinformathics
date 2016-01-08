@@ -9,12 +9,15 @@
 #include <iostream>
 #include "Node.h"
 #include "color.h"
+#include "wTree.h"
+#include "Data.h"
 using namespace std;
 
 class RedBlackTree {
 private:
     Node *root;
     Node *sentinel;
+
     void insertFix(Node *node){
         Node *uncle;
         if(root == node){
@@ -235,6 +238,12 @@ private:
         }
         if(node != NULL)
         {
+            if(node->getLeftNode()) {
+                cout << "\n\nLeft:\n";
+                display(node->getLeftNode());
+            }
+
+
             cout<<"\n\t NODE: ";
             cout<<"\n Key: " << node->getValue()->getId();
             cout<<"\n Colour: ";
@@ -256,10 +265,13 @@ private:
                 cout<<"\n There is no left child of the node.  ";
             cout<<endl;
 
-            if(node->getLeftNode()) {
-                cout << "\n\nLeft:\n";
-                display(node->getLeftNode());
-            }
+            cout<<"\n Broj znakova lijevo "<<node->getValue()->getP();
+            cout<<"\n Broj znakova A lijevo "<<node->getValue()->getNoA();
+            cout<<"\n Broj znakova C lijevo "<<node->getValue()->getNoC();
+            cout<<"\n Broj znakova G lijevo "<<node->getValue()->getNoG();
+            cout<<"\n Broj znakova T lijevo "<<node->getValue()->getNoT();
+
+
             if(node->getRightNode())
             {
                 cout<<"\n\nRight:\n";
@@ -273,11 +285,11 @@ public:
         root = NULL;
         sentinel = NULL;
     }
-    void insert(long newValue){
+    void insert(long newValue,wTree *w,Data *d){
         Node *p, *q;
-        Node *t = new Node;
-        Data *newData = new Data(newValue);
-        t->setValue(newData);
+        Node *t = new Node(w,d);
+
+
         t->setLeftNode(NULL);
         t->setRightNode(NULL);
         t->setColor(red);
@@ -307,6 +319,7 @@ public:
             }
         }
         insertFix(t);
+
     };
     void deleteNode(long deleteValue){
         if(root == NULL){
@@ -417,7 +430,14 @@ public:
                 cout << "Black";
             else
                 cout << "Red";
+            cout<<"\n Broj znakova lijevo "<<p->getValue()->getP();
+            cout<<"\n Broj znakova A lijevo "<<p->getValue()->getNoA();
+            cout<<"\n Broj znakova C lijevo "<<p->getValue()->getNoC();
+            cout<<"\n Broj znakova G lijevo " <<p->getValue()->getNoG();
+            cout<<"\n Broj znakova T lijevo "<<p->getValue()->getNoT();
         }
+
+
     };
 
 };

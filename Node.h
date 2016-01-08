@@ -8,7 +8,7 @@
 #include "color.h"
 #include "Data.h"
 #include <iostream>
-
+#include "wTree.h"
 using namespace my_color;
 
 class Node {
@@ -19,6 +19,7 @@ private:
     Node *rightNode;
     Node *leftNode;
     Node *parentNode;
+    wTree *w;
 
 public:
     Data* getValue(){
@@ -55,12 +56,22 @@ public:
         this->parentNode = parent;
     }
     Node(){
+
         this->color = black;
         this->rightNode = this;
         this->leftNode = this;
         this->parentNode = this;
     }
 
+
+    Node(wTree *w, Data *value) : w(w), value(value) {
+
+
+        this->color = black;
+        this->rightNode = this;
+        this->leftNode = this;
+        this->parentNode = this;
+    }
 };
 
 
