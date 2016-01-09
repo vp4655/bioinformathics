@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CreateTree.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/color.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CreateTree.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WaveletNode.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Node.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Data.h" isTestSource="false" />
