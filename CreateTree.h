@@ -32,28 +32,29 @@ using namespace std;
         string s;
         for (int i = 0; i < blockSize; i++) {
 
-        cin >> c;
+            cin >> c;
 
-        if (c == end) {
-            canContinue = false;
-            break;
-        } else {
+            if (c == end) {
+                canContinue = false;
+                break;
+            } else {
 
-            s += c;
+                s += c;
 
+            }
         }
-        }
 
-        wTree *w=new wTree(s,alf);
+        wTree *w = new wTree(s, alf);
 
-        long aCurr=w->rank('a',w->length()-1);
-        long cCurr=w->rank('c',w->length()-1);
-        long gCurr=w->rank('g',w->length()-1);
-        long  tCurr=w->rank('t',w->length()-1);
+        long aCurr = w->rank('a', w->length() - 1);
+        long cCurr = w->rank('c', w->length() - 1);
+        long gCurr = w->rank('g', w->length() - 1);
+        long tCurr = w->rank('t', w->length() - 1);
 
-        Data *d=new Data(id,signs,nA,nC,nG,nT);
-        rb.insert(id,w,d);
-
+        if (s.length() > 0) { 
+        Data *d = new Data(id, signs, nA, nC, nG, nT);
+        rb.insert(id, w, d);
+    }
 
         nA+=aCurr;
         nC+=cCurr;
