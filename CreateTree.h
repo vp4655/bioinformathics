@@ -16,7 +16,8 @@
 #include "Data.h"
 
 using namespace std;
- RedBlackTree createTree(char end = '#',int blockSize=4){
+inline
+ RedBlackTree createTree(char end = '#',int blockSize=8){
 
 
     bool canContinue = true;

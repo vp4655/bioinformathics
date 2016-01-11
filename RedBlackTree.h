@@ -282,33 +282,36 @@ private:
         }
     };
     unsigned long SymbolCount(Node *node,char c){
-        char findC = toupper(c);
-        if(findC == 'C') {
+        char findC = tolower(c);
+        if(findC == 'c') {
             return node ->getValue() ->getNoC();
         }
-        else if(findC == 'A') {
+        else if(findC == 'a') {
             return node ->getValue() ->getNoA();
         }
-        else if(findC == 'G') {
+        else if(findC == 'g') {
             return node ->getValue() ->getNoG();
         }
-        else if(findC == 'T') {
+        else if(findC == 't') {
             return node ->getValue() ->getNoT();
         }
         else{
             return -1;
         }
     }
-    unsigned long rank(Node *node, unsigned long i, char c) {
+    unsigned long rankT(Node *node, unsigned long i, char c) {
         unsigned long numberOfSymbols = node->getValue()->getP();
-        if (i <= numberOfSymbols) {
+        if( node->getValue()->getP()==0 ){
+            return node->getWTree()->rank(c, i);
+        }
+        if (i <= numberOfSymbols ) {
             return rank(node->getLeftNode(), i, c);
         }
         else if (i <= numberOfSymbols + node->getWTree()->length()) {
             return SymbolCount(node, c) + node->getWTree()->rank(c, i - numberOfSymbols);
         }
         else {
-            return (node->getRightNode(), i, c);
+            return rank(node->getRightNode(), i, c);
         }
     }
 
@@ -472,7 +475,12 @@ public:
 
 
     };
-
+    unsigned long rank(Node *node, unsigned long i, char c){
+        return rankT(node,i,c);
+    }
+    Node *getRoot(){
+        return this->root;
+    }
 };
 
 #endif //BIOINFORMATICS_REDBLACKTREE_H
