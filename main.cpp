@@ -11,6 +11,7 @@ int main(){
     Data *data;
     RedBlackTree tree= createTree('#',8);
     tree.disp();
+    //cout << "\n"<<tree.rank(tree.getRoot(),1,'a');
 
 
         /*RedBlackTree tree = RedBlackTree();

@@ -315,7 +315,18 @@ private:
         }
     }
 
-
+    unsigned long select(Node *node, long i, char c) {
+        unsigned long NumberOfSymbolAppearance = SymbolCount(node,c);
+        if(NumberOfSymbolAppearance >= i){
+            return select(node ->getLeftNode(),i,c);
+        }
+        else if(node ->getWTree() -> select(c, i-NumberOfSymbolAppearance) == -1){
+            return select(node ->getRightNode(),i,c);
+        }
+        else{
+            return node ->getWTree() -> select(c, i-NumberOfSymbolAppearance) + NumberOfSymbolAppearance;
+        }
+    }
 public:
     RedBlackTree(){
         root = NULL;
