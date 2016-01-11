@@ -12,7 +12,7 @@
 #include <fstream>
 #include "wTree.h"
 #include <algorithm>
-#include <w32api/wbemdisp.h>
+//#include <w32api/wbemdisp.h>
 #include "Data.h"
 
 using namespace std;

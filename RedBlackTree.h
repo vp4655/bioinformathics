@@ -7,6 +7,8 @@
 
 
 #include <iostream>
+#include <stdio.h>
+#include <ctype.h>
 #include "Node.h"
 #include "color.h"
 #include "wTree.h"
@@ -279,6 +281,37 @@ private:
             }
         }
     };
+    unsigned long SymbolCount(Node *node,char c){
+        char findC = toupper(c);
+        if(findC == 'C') {
+            return node ->getValue() ->getNoC();
+        }
+        else if(findC == 'A') {
+            return node ->getValue() ->getNoA();
+        }
+        else if(findC == 'G') {
+            return node ->getValue() ->getNoG();
+        }
+        else if(findC == 'T') {
+            return node ->getValue() ->getNoT();
+        }
+        else{
+            return -1;
+        }
+    }
+    unsigned long rank(Node *node, unsigned long i, char c) {
+        unsigned long numberOfSymbols = node->getValue()->getP();
+        if (i <= numberOfSymbols) {
+            return rank(node->getLeftNode(), i, c);
+        }
+        else if (i <= numberOfSymbols + node->getWTree()->length()) {
+            return SymbolCount(node, c) + node->getWTree()->rank(c, i - numberOfSymbols);
+        }
+        else {
+            return (node->getRightNode(), i, c);
+        }
+    }
+
 
 public:
     RedBlackTree(){
