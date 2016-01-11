@@ -52,7 +52,7 @@ inline
         long gCurr = w->rank('g', w->length() - 1);
         long tCurr = w->rank('t', w->length() - 1);
 
-        if (s.length() > 0) { 
+        if (s.length() > 0) {
         Data *d = new Data(id, signs, nA, nC, nG, nT);
         rb.insert(id, w, d);
     }

@@ -104,15 +104,16 @@ public:
 
 
         bool  v = calculateValue(node,c);
+
         for (int i=0;i<node.getVec().size()+1;i++){
             int jNew = count(node.getVec().begin(), node.getVec().begin() +i, v);
             if (jNew==j){
 
 
                 if (node.getParent()== nullptr) {
-                    return i;
+                    return i-1;
                 } else {
-                    return selectRecurs(*node.getParent(),c,i-1);
+                    return selectRecurs(*node.getParent(),c,i);
                 }
             }
         }
