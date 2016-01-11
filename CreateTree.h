@@ -12,11 +12,12 @@
 #include <fstream>
 #include "wTree.h"
 #include <algorithm>
-#include <w32api/wbemdisp.h>
+//#include <w32api/wbemdisp.h>
 #include "Data.h"
 
 using namespace std;
- RedBlackTree createTree(char end = '#',int blockSize=4){
+inline
+ RedBlackTree createTree(char end = '#',int blockSize=8){
 
 
     bool canContinue = true;

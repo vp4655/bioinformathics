@@ -55,6 +55,9 @@ public:
     void setParentNode(Node *parent){
         this->parentNode = parent;
     }
+    wTree *getWTree(){
+        return this->w;
+    }
     Node(){
 
         this->color = black;

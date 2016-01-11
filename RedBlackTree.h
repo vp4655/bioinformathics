@@ -7,6 +7,8 @@
 
 
 #include <iostream>
+#include <stdio.h>
+#include <ctype.h>
 #include "Node.h"
 #include "color.h"
 #include "wTree.h"
@@ -279,7 +281,52 @@ private:
             }
         }
     };
+    unsigned long SymbolCount(Node *node,char c){
+        char findC = tolower(c);
+        if(findC == 'c') {
+            return node ->getValue() ->getNoC();
+        }
+        else if(findC == 'a') {
+            return node ->getValue() ->getNoA();
+        }
+        else if(findC == 'g') {
+            return node ->getValue() ->getNoG();
+        }
+        else if(findC == 't') {
+            return node ->getValue() ->getNoT();
+        }
+        else{
+            return -1;
+        }
+    }
+    unsigned long rankT(Node *node, unsigned long i, char c) {
+        unsigned long numberOfSymbols = node->getValue()->getP();
+        if( node->getValue()->getP()==0 ){
+            return node->getWTree()->rank(c, i);
+        }
+        if (i <= numberOfSymbols ) {
+            return rank(node->getLeftNode(), i, c);
+        }
+        else if (i <= numberOfSymbols + node->getWTree()->length()) {
+            return SymbolCount(node, c) + node->getWTree()->rank(c, i - numberOfSymbols);
+        }
+        else {
+            return rank(node->getRightNode(), i, c);
+        }
+    }
 
+    unsigned long select(Node *node, long i, char c) {
+        unsigned long NumberOfSymbolAppearance = SymbolCount(node,c);
+        if(NumberOfSymbolAppearance >= i){
+            return select(node ->getLeftNode(),i,c);
+        }
+        else if(node ->getWTree() -> select(c, i-NumberOfSymbolAppearance) == -1){
+            return select(node ->getRightNode(),i,c);
+        }
+        else{
+            return node ->getWTree() -> select(c, i-NumberOfSymbolAppearance) + NumberOfSymbolAppearance;
+        }
+    }
 public:
     RedBlackTree(){
         root = NULL;
@@ -439,7 +486,12 @@ public:
 
 
     };
-
+    unsigned long rank(Node *node, unsigned long i, char c){
+        return rankT(node,i,c);
+    }
+    Node *getRoot(){
+        return this->root;
+    }
 };
 
 #endif //BIOINFORMATICS_REDBLACKTREE_H
