@@ -102,15 +102,17 @@ public:
 
     int selectRecurs(wNode node, char c, int j){
 
+
         bool  v = calculateValue(node,c);
-        for (int i=0;i<node.getVec().size();i++){
-            int jNew = count(node.getVec().begin(), node.getVec().begin() + i, v);
+        for (int i=0;i<node.getVec().size()+1;i++){
+            int jNew = count(node.getVec().begin(), node.getVec().begin() +i, v);
             if (jNew==j){
 
+
                 if (node.getParent()== nullptr) {
-                    return jNew;
+                    return i;
                 } else {
-                    return selectRecurs(*node.getParent(),c,j);
+                    return selectRecurs(*node.getParent(),c,i-1);
                 }
             }
         }
@@ -121,7 +123,6 @@ public:
     int select (char c, int j){
         wNode beginNode=getLeafNode(c,*root);
         cout<<endl;
-
 
         return selectRecurs(beginNode,c,j);
     }

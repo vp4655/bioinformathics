@@ -62,9 +62,9 @@ public:
 
             int nHalf=1.0*alfbt.size()/2+0.5;
             isLLeaf=false;
-            lChild=new wNode(nullptr ,nodeDepth+1,left,vector<char>(alfbt.begin(),alfbt.begin()+nHalf));
+            lChild=new wNode(this ,nodeDepth+1,left,vector<char>(alfbt.begin(),alfbt.begin()+nHalf));
             if (alfbt.size()>3) {
-                rChild=new wNode(nullptr ,nodeDepth+1,right,vector<char>(alfbt.begin()+nHalf,alfbt.end()));
+                rChild=new wNode(this ,nodeDepth+1,right,vector<char>(alfbt.begin()+nHalf,alfbt.end()));
                 isRLeaf=false;
             } else {
                 isRLeaf=true;
