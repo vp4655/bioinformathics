@@ -1,6 +1,9 @@
-//
-// Created by Valentino on 20.11.2015..
-//
+/*-------------------------------------------------------
+                    Valentino Perović
+
+Enum for color of Red Black tree's nodes.
+
+---------------------------------------------------------*/
 
 #ifndef BIOINFORMATICS_COLOR_H
 #define BIOINFORMATICS_COLOR_H
