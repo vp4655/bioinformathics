@@ -12,6 +12,7 @@
 #include <fstream>
 #include "wTree.h"
 #include <algorithm>
+#include <ctype.h>
 //#include <w32api/wbemdisp.h>
 #include "Data.h"
 
@@ -38,11 +39,11 @@ inline
             if (c == end) {
                 canContinue = false;
                 break;
-            } else  if (c != 'g' && c != 'a' && c != 'c' && c != 't' ){
+            } else  if (c != 'G' && c != 'A' && c != 'C' && c != 'T' and c != 'g' && c != 'a' && c != 'c' && c != 't' ){
                 continue;
             } else {
 
-                s += c;
+                s += tolower(c);
 
             }
         }

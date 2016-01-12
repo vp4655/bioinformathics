@@ -314,7 +314,7 @@ private:
             return rank(node->getRightNode(), i, c);
         }
     }
-
+public:
     unsigned long select(Node *node, long i, char c) {
         unsigned long NumberOfSymbolAppearance = SymbolCount(node,c);
         if(NumberOfSymbolAppearance >= i){
@@ -327,7 +327,7 @@ private:
             return node ->getWTree() -> select(c, i-NumberOfSymbolAppearance) + NumberOfSymbolAppearance;
         }
     }
-public:
+
     RedBlackTree(){
         root = NULL;
         sentinel = NULL;
