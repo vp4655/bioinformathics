@@ -38,6 +38,8 @@ inline
             if (c == end) {
                 canContinue = false;
                 break;
+            } else  if (c != 'g' && c != 'a' && c != 'c' && c != 't' ){
+                continue;
             } else {
 
                 s += c;
