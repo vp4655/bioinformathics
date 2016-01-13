@@ -405,7 +405,8 @@ public:
             return select(node ->getRightNode(),i,c);
         }
         else{
-            return node ->getWTree() -> select(c, i-NumberOfSymbolAppearance) + NumberOfSymbolAppearance;
+            unsigned long x=node ->getWTree() -> select(c, i-NumberOfSymbolAppearance);
+            return node ->getWTree() -> select(c, i-NumberOfSymbolAppearance) + node->getValue()->getP();
         }
     }
 
