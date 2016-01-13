@@ -406,8 +406,11 @@ private:
         else if (i <= numberOfSymbols + node->getWTree()->length()) {
             return SymbolCount(node, c) + node->getWTree()->rank(c, i - numberOfSymbols);
         }
-        else {
+        else if(node->getRightNode() != NULL){
             return rank(node->getRightNode(), i, c);
+        }
+        else{
+            return SymbolCount(node, c);
         }
     }
 public:
@@ -420,15 +423,20 @@ public:
      */
     unsigned long select(Node *node, long i, char c) {
         unsigned long NumberOfSymbolAppearance = SymbolCount(node,c);
+        unsigned long x= node ->getWTree() -> select(c, i-NumberOfSymbolAppearance);
         if(NumberOfSymbolAppearance >= i){
             return select(node ->getLeftNode(),i,c);
         }
-        else if(node ->getWTree() -> select(c, i-NumberOfSymbolAppearance) == -1){
-            return select(node ->getRightNode(),i,c);
+        else if(x == -1 ) {
+            if( node ->getRightNode() == NULL){
+                return -1;
+            }
+            else {
+                return select(node->getRightNode(), i, c);
+            }
         }
         else{
-            unsigned long x=node ->getWTree() -> select(c, i-NumberOfSymbolAppearance);
-            return node ->getWTree() -> select(c, i-NumberOfSymbolAppearance) + node->getValue()->getP();
+            return x + node->getValue()->getP();
         }
     }
 
