@@ -1,6 +1,8 @@
-//
-// Created by Administrator on 7.1.2016..
-//
+/*Marta Postenjak
+ *
+ * Class represent single node which is building block for wavelet tree. It contains vector of bits, parent node and left and right chiid.
+ * It also contains alphabet based on which we can interperet meaning of bit.
+ */
 
 #ifndef BIOINFORMATICS_WNODE_H
 #define BIOINFORMATICS_WNODE_H
@@ -30,7 +32,10 @@ class wNode {
     vector <char> alfbt;
 
 
-
+/**
+ * Constructor for wNode class. It gets parent node, string s, and vector<bit> as parametars.It generetas all nodes needen for single tree beacuse it is
+ * recursive.
+ */
 public:
 
     wNode(wNode *parent, int noDepth,string s,vector<char> al) : parent(parent), nodeDepth(noDepth),alfbt(al) {
@@ -75,36 +80,59 @@ public:
         }
     }
 
+    /**
+     * Getter for parents node.
+     */
     wNode *getParent() const {
         return parent;
     }
 
+    /*
+     * Getter for left child
+     */
     wNode *getLChild() const {
         return lChild;
     }
 
+    /**
+     * Getter for right child
+     */
     wNode *getRChild() const {
         return rChild;
     }
 
+    /**
+     * Getter for depth of node
+     */
     int getNodeDepth() const {
         return nodeDepth;
     }
 
 
+    /**
+     * Getter for bool variable if node is left  child of its parent
+     */
     bool isIsLLeaf() const {
         return isLLeaf;
     }
 
+    /**
+     * Getter for bool variable if node is right  child of its parent
+     */
     bool isIsRLeaf() const {
         return isRLeaf;
     }
 
+    /*
+     * Getter for values
+     */
     const vector<bool, allocator<bool>> &getVec() const {
         return vec;
     }
 
-
+    /*
+     * Getter for alfabet
+     */
     const vector<char> &getAlfbt() const {
         return alfbt;
     }

@@ -1,6 +1,7 @@
-//
-// Created by Administrator on 8.1.2016..
-//
+/*
+ * Class that is used for designing red and black tree which contains wavelet node in each line. It works an alfabet that contains 'a','c','g' and d
+ * but it can also work with lower and upper cases.
+ */
 
 #ifndef UNTITLED1_CREATETREE_H
 #define UNTITLED1_CREATETREE_H
@@ -18,6 +19,9 @@
 
 using namespace std;
 inline
+/**
+ * Function creates rb tree with defined size of block in  wavelet tree
+ */
  RedBlackTree createTree(char end = '#',int blockSize=8){
 
 
