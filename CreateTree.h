@@ -36,16 +36,21 @@ inline
 
             cin >> c;
 
-            if (c == end) {
-                canContinue = false;
-                break;
+            if (c == '>') {
+                int i = 0;
+               string bezze;
+                getline(cin, bezze);
             } else  if (c != 'G' && c != 'A' && c != 'C' && c != 'T' and c != 'g' && c != 'a' && c != 'c' && c != 't' ){
                 continue;
             } else {
 
+
                 s += tolower(c);
 
             }
+            int d = std::cin.peek();  // peek character
+
+            if ( d == EOF ) canContinue=false;
         }
 
         wTree *w = new wTree(s, alf);
