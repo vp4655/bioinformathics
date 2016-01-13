@@ -14,6 +14,53 @@ Compressed data structures aims at representing classical data structures  in li
 
 Data structures used for implementation of fast rank and select operation on big sequences are Red Black Trees with Wavelet Trees in their nodes. By choosing those two structures we can achive fast search for right subsequence of inital data O(logN) with fast rank and select operations of Wavelet tree O(logA) - where A stands for alphabet size. Project is completely done in C++.
 
+## Usage
+
+TODO
+
+## Bacterias testing with memory usage and time statistics
+
+Pull project to your local directory ( eg. your_local_path/rank_select ) open bioinformatics folder with your console and follow next steps to see results for bacterias tested.
+
+#### Anaplasma phagocytophilium
+
+>
+>
+> g++ -std=c++0x anaplasma_phagocytophilum.cpp -o anaplasma -lpsapi
+> anaplasma < ./bacterias/Anaplasma_phagocytophilum.GCA_000968465.1.30.dna.toplevel.fa
+>
+>
+
+#### Echericia coli
+
+>
+>
+> g++ -std=c++0x echericia_coli.cpp -o echericia -lpsapi
+> echericia < ./bacterias/Escherichia_coli.GCA_000967155.1.30.dna_rm.toplevel.fa
+>
+>
+
+#### Salmonella enterica
+
+>
+>
+> g++ -std=c++0x salmonella_enterica.cpp -o salmonella -lpsapi
+> salmonella < ./bacterias/Salmonella_enterica.GCA_000783815.1.30.dna.toplevel.fa
+>
+>
+
+#### Mycobacterium tuberculosis
+
+>
+>
+> g++ -std=c++0x mycobacterium_tuberculosis.cpp -o tuberculosis -lpsapi
+> tuberculosis < ./bacterias/Anaplasma_phagocytophilum.GCA_000968465.1.30.dna.toplevel.fa
+>
+>
+
+
+If you wish to run programs without memory usage and time statistics, just compile .no_memory.cpp bacteria files and compile without -lpsapi.
+
 License
 ---------
 The MIT License (MIT)
