@@ -1,7 +1,3 @@
-//
-// Created by Stjepan on 4.1.2016..
-//
-
 #ifndef BIOINFORMATICS_DATA_H
 #define BIOINFORMATICS_DATA_H
 #include <iostream>
