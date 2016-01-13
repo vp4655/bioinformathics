@@ -154,7 +154,7 @@ public:
      */
     int select (char c, int j){
         wNode beginNode=getLeafNode(c,*root);
-        cout<<endl;
+        //cout<<endl;
 
         return selectRecurs(beginNode,c,j);
     }
