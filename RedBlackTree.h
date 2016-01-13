@@ -436,7 +436,7 @@ public:
             }
         }
         else{
-            return x + node->getValue()->getP();
+            return x + node->getValue()->getP()+1;
         }
     }
 
