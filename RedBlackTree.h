@@ -362,6 +362,13 @@ private:
         }
     };
 
+    /**
+    *SymbolCount(Node *node,char c)
+    *
+    * DESCRIPTION
+    * find number of specific symbol in node value.
+    *
+    */
     unsigned long SymbolCount(Node *node,char c){
         char findC = tolower(c);
         if(findC == 'c') {
@@ -380,6 +387,14 @@ private:
             return -1;
         }
     }
+
+    /**
+    *rankT(Node *node, unsigned long i, char c)
+    *
+    * DESCRIPTION
+    * recursive function which finds rank for specific character
+    *
+    */
     unsigned long rankT(Node *node, unsigned long i, char c) {
         unsigned long numberOfSymbols = node->getValue()->getP();
         if( node->getValue()->getP()==0 ){
@@ -396,6 +411,13 @@ private:
         }
     }
 public:
+    /**
+     *select(Node *node, long i, char c)
+     *
+     * DESCRIPTION
+     * recursive function which finds select for specific character
+     *
+     */
     unsigned long select(Node *node, long i, char c) {
         unsigned long NumberOfSymbolAppearance = SymbolCount(node,c);
         if(NumberOfSymbolAppearance >= i){
@@ -625,7 +647,13 @@ public:
 
 
     };
-
+    /**
+     *rank()
+     *
+     * DESCRIPTION
+     * return rank of specific character.
+     *
+     */
     unsigned long rank(Node *node, unsigned long i, char c){
         return rankT(node,i,c);
     }
