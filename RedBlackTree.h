@@ -429,7 +429,7 @@ public:
         }
         else if(x == -1 ) {
             if( node ->getRightNode() == NULL){
-                return -1;
+                return 0;
             }
             else {
                 return select(node->getRightNode(), i, c);
