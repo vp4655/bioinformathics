@@ -1,6 +1,5 @@
 # Bioinformatics project - Rank/Select
 
------------------------------------------
 
 [![License](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://img.shields.io/packagist/l/doctrine/orm.svg)
 
