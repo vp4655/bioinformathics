@@ -1,0 +1,15 @@
+Building tree is starting....
+Building tree is finished in 7.655s. Starting functions......
+Select(8, A) : 27
+Select(800, A) : 4139
+Select(12000, A) : 50122
+Select(150000, A) : 493727
+Select(1000000, A) : Ne postoji 1000000i A !
+Rank(36, a) : 11
+Rank(9000, C) : 1854
+Rank(500000, G) : 105558
+Rank(1000000, T) : 294193
+Rank(20000000, A) : 431996
+Job is done !
+Memory used : 72122368
+Time elapsed for functions : 0.001s

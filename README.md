@@ -16,50 +16,73 @@ Data structures used for implementation of fast rank and select operation on big
 
 ## Usage
 
-TODO
+We provided numbers of test examples, some are randomly generated and some are genomes found at [Bacteria ensamble website](http://bacteria.ensembl.org/index.html). Results that we ran are located in `outputs/` folder and its `/bacterias_outputs` and `/tests_outputs` subfolders. Version without memory and time statistics can be found in `no_statistics_versions` folder - just move them in root folder and follow procedure.
+
+Example of basic test usage with statistics :
+````bash
+    # place yourself in bioinformatics folder
+    # and compile code
+    g++ -std=c++0x example1000.cpp -o example1000 -lpsapi
+    
+    # run compiled code with right input txt file and output txt file
+    example1000 < ./examples/example100.txt > ./outputs/tests_outputs/output_example1000.txt
+`````
+
+Example of basic usage without statistics :
+````bash
+    # place yourself in bioinformatics folder
+    # and compile code
+    g++ -std=c++0x example1000_no_statistics.cpp -o example1000_no_stat
+    
+    # run compiled code with right input txt file and output txt file
+    example1000_no_stat < ./examples/example100.txt > ./outputs/tests_outputs/output_example1000_no_stat.txt
+`````
 
 ## Bacterias testing with memory usage and time statistics
 
 Pull project to your local directory ( eg. your_local_path/rank_select ) open bioinformatics folder with your console and follow next steps to see results for bacterias tested.
 
-#### Anaplasma phagocytophilium
+##### Anaplasma phagocytophilium
 
->
->
-> g++ -std=c++0x anaplasma_phagocytophilum.cpp -o anaplasma -lpsapi
-> anaplasma < ./bacterias/Anaplasma_phagocytophilum.GCA_000968465.1.30.dna.toplevel.fa
->
->
+````bash
+    # compile code
+    g++ -std=c++0x anaplasma_phagocytophilum.cpp -o anaplasma -lpsapi
+    
+    # run compiled code with right input txt file and output txt file
+    anaplasma < ./bacterias/Anaplasma_phagocytophilum.GCA_000968465.1.30.dna.toplevel.fa > ./outputs/bacterias_outputs/output_anaplasma.txt
+`````
 
-#### Echericia coli
+##### Echericia coli
 
->
->
-> g++ -std=c++0x echericia_coli.cpp -o echericia -lpsapi
-> echericia < ./bacterias/Escherichia_coli.GCA_000967155.1.30.dna_rm.toplevel.fa
->
->
+````bash
+    # compile code
+    g++ -std=c++0x echericia_coli.cpp -o echericia -lpsapi
+    
+    # run compiled code with right input txt file and output txt file
+    echericia < ./bacterias/Escherichia_coli.GCA_000967155.1.30.dna_rm.toplevel.fa > ./outputs/bacterias_outputs/output_escherichia.txt
+`````
 
-#### Salmonella enterica
+##### Salmonella enterica
 
->
->
-> g++ -std=c++0x salmonella_enterica.cpp -o salmonella -lpsapi
-> salmonella < ./bacterias/Salmonella_enterica.GCA_000783815.1.30.dna.toplevel.fa
->
->
+````bash
+    # compile code
+    g++ -std=c++0x salmonella_enterica.cpp -o salmonella -lpsapi
+    
+    # run compiled code with right input txt file and output txt file
+    salmonella < ./bacterias/Salmonella_enterica.GCA_000783815.1.30.dna.toplevel.fa > ./outputs/bacterias_outputs/output_salmonela.txt
+`````
 
-#### Mycobacterium tuberculosis
+##### Mycobacterium tuberculosis
 
->
->
-> g++ -std=c++0x mycobacterium_tuberculosis.cpp -o tuberculosis -lpsapi
-> tuberculosis < ./bacterias/Anaplasma_phagocytophilum.GCA_000968465.1.30.dna.toplevel.fa
->
->
+````bash
+    # compile code
+    g++ -std=c++0x mycobacterium_tuberculosis.cpp -o tuberculosis -lpsapi
+    
+    # run compiled code with right input txt file and output txt file
+    tuberculosis < ./bacterias/Mycobacterium_tuberculosis_gca_000666105.GCA_000666105.1.30.dna.toplevel.fa > ./outputs/bacterias_outputs/output_tuberculosis.txt
+`````
 
-
-If you wish to run programs without memory usage and time statistics, just compile .no_memory.cpp bacteria files and compile without -lpsapi.
+If you wish to run programs without memory usage and time statistics, just take examples that contain _no_statistics.cpp sufix and compile without -lpsapi.
 
 License
 ---------
