@@ -14,13 +14,28 @@ Compressed data structures aims at representing classical data structures  in li
 
 Data structures used for implementation of fast rank and select operation on big sequences are Red Black Trees with Wavelet Trees in their nodes. By choosing those two structures we can achive fast search for right subsequence of inital data O(logN) with fast rank and select operations of Wavelet tree O(logA) - where A stands for alphabet size. Project is completely done in C++.
 
+## Requirements
+- [g++](http://www.cprogramming.com/g++.html) (4.8.2. or higher)
+- [GNU Make](https://www.gnu.org/software/make/) (optional)
+- Windows 8.1 (for memory usage and time consumption statistics)
+
+## Installation
+
+To build the CPPPOA run the following commands from the folder where you want to install the tool:
+
+````bash
+	git clone git@github.com:vp4655/bioinformatics.git
+	cd bioinformatics/
+	# now start with usage
+````
+
 ## Usage
 
 We provided numbers of test examples, some are randomly generated and some are genomes found at [Bacteria ensamble website](http://bacteria.ensembl.org/index.html). Results that we ran are located in `outputs/` folder and its `/bacterias_outputs` and `/tests_outputs` subfolders. Version without memory and time statistics can be found in `no_statistics_versions` folder - just move them in root folder and follow procedure.
 
 Example of basic test usage with statistics :
 ````bash
-    # place yourself in bioinformatics folder
+    # place yourself in bioinformatics folder if you skipped installation step
     # and compile code
     g++ -std=c++0x example1000.cpp -o example1000 -lpsapi
     
