@@ -17,7 +17,7 @@ Data structures used for implementation of fast rank and select operation on big
 ## Requirements
 - [g++](http://www.cprogramming.com/g++.html) (4.8.2. or higher)
 - [GNU Make](https://www.gnu.org/software/make/) (optional)
-- Windows 8.1 (for memory usage and time consumption statistics)
+- [Windows 8.1](http://www.microsoftstore.com/store/msusa/en_US/cat/Windows/categoryID.62684800) (for memory usage and time consumption statistics)
 
 ## Installation
 
