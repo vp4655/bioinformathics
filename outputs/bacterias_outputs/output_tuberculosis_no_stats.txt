@@ -1,0 +1,12 @@
+Building tree is starting....
+Select(8, A) : 50
+Select(800, A) : 1900
+Select(12000, A) : 33841
+Select(150000, A) : 871815
+Select(1000000, A) : Ne postoji 1000000i A !
+Rank(36, a) : 7
+Rank(9000, C) : 3380
+Rank(500000, G) : 166057
+Rank(1000000, T) : 171549
+Rank(20000000, A) : 759142
+Job is done !

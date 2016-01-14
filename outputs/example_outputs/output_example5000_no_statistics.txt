@@ -1,0 +1,12 @@
+Building tree is starting....
+Select(27 , A) : 99
+Select(36, C) : 159
+Select(24, C) : 106
+Select(91, G) : 409
+Select(56, T) : 217
+Rank(C, 609) : 155
+Rank(T, 50) : 17
+Rank(C, 337) : 82
+Rank(C, 754) : 193
+Rank(T, 502) : 131
+Job is done !

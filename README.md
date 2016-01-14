@@ -16,7 +16,7 @@ Data structures used for implementation of fast rank and select operation on big
 
 ## Usage
 
-We provided numbers of test examples, some are randomly generated and some are genomes found at [Bacteria ensamble website](http://bacteria.ensembl.org/index.html). Results that we ran are located in `outputs/` folder and its `/bacterias_outputs` and `/tests_outputs` subfolders.
+We provided numbers of test examples, some are randomly generated and some are genomes found at [Bacteria ensamble website](http://bacteria.ensembl.org/index.html). Results that we ran are located in `outputs/` folder and its `/bacterias_outputs` and `/tests_outputs` subfolders. Version without memory and time statistics can be found in `no_statistics_versions` folder - just move them in root folder and follow procedure.
 
 Example of basic test usage with statistics :
 ````bash
