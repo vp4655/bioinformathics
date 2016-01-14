@@ -31,26 +31,26 @@ int main(){
     clock_t beginFunctions = clock();
 
     // RANK/SELECT CALLS
-    cout << "Select(27 , A) : " << tree.select(tree.getRoot(),27,'a') << "\n";
+    cout << "Select(709 , A) : " << tree.select(tree.getRoot(),709,'a') << "\n";
 
-    cout << "Select(36, C) : " << tree.select(tree.getRoot(),36,'c') << "\n";
+    cout << "Select(243, T) : " << tree.select(tree.getRoot(),243,'t') << "\n";
 
-    cout << "Select(24, C) : " << tree.select(tree.getRoot(),24,'c') << "\n";
+    cout << "Select(736, T) : " << tree.select(tree.getRoot(),736,'t') << "\n";
 
-    cout << "Select(91, G) : " << tree.select(tree.getRoot(),91,'g') << "\n";
+    cout << "Select(548, G) : " << tree.select(tree.getRoot(),548,'g') << "\n";
 
-    cout << "Select(56, T) : " << tree.select(tree.getRoot(),56,'t') << "\n";
+    cout << "Select(856, A) : " << tree.select(tree.getRoot(),856,'a') << "\n";
 
 
-    cout << "Rank(C, 609) : " << tree.rank(tree.getRoot(),609,'c') << "\n";
+    cout << "Rank(A, 8511) : " << tree.rank(tree.getRoot(),8511,'a') << "\n";
 
-    cout << "Rank(T, 50) : " << tree.rank(tree.getRoot(),50,'t') << "\n";
+    cout << "Rank(T, 657) : " << tree.rank(tree.getRoot(),657,'t') << "\n";
 
-    cout << "Rank(C, 337) : " << tree.rank(tree.getRoot(),337,'c') << "\n";
+    cout << "Rank(T, 6917) : " << tree.rank(tree.getRoot(),6917,'t') << "\n";
 
-    cout << "Rank(C, 754) : " << tree.rank(tree.getRoot(),754,'c') << "\n";
+    cout << "Rank(T, 2236) : " << tree.rank(tree.getRoot(),2236,'t') << "\n";
 
-    cout << "Rank(T, 502) : " << tree.rank(tree.getRoot(),502,'t') << "\n";
+    cout << "Rank(C, 3157) : " << tree.rank(tree.getRoot(),3157,'c') << "\n";
 
     // Algorithm finished successfully
     cout << "Job is done !\n";
